@@ -14,14 +14,19 @@
 <body>
     <h1>William's Cookie Clicker</h1>
     <div id="startPopup" class="popup">
-        <p>Dear Baker,</p>
-        <p>Welcome to your new bakery! A hard day is waiting ahed, meaning you have to make as many cookies as you can. If not, the boss will fire you immediately!</p>
-        <button onclick="dissmissStartPopup()">OK</button>
+        <p>Dear Amature Baker,</p>
+        <p>Welcome to your new bakery! A hard day is waiting ahead, meaning you have to make as many cookies as you can. If not, the boss will fire you immediately!</p>
+        <p>But do not worry, just click the cookie. That's it, alright?</p>
+        <br>
+        <button onclick="dissmissStartPopup()">I'm ready!</button>
     </div>
-    <div id="cookie">
-        <div></div>
-        <div></div>
-        <h2>*I am a cookie</h2>
+    <!-- <div id="rippleBound">
+        <div id="ripple"></div>
+    </div> -->
+    <div id="cookie" onclick="cookieClick()">
+        <div id="bigDot" class="pulsing"></div>
+        <div id="smallDot"></div>
+        <h2 unselectable="on">*I am a cookie</h2>
     </div>
 </body>
 </html>

@@ -6,10 +6,20 @@
     --black: #1d3557;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 html{
     background-color: var(--white);
     color: var(--black);
     font-family: 'Gloria Hallelujah', cursive;
+}
+
+h1{
+    font-size: 2.5em;
+    margin: 20px;
 }
 
 .popup{
@@ -35,6 +45,7 @@ html{
     padding: 10px;
     border: none;
     border-radius: 10px;
+    font-family: 'Gloria Hallelujah', cursive;
     transition: all ease-in-out 0.1s;
 }
 
@@ -48,6 +59,7 @@ html{
     width: 50vh;
     border-radius: 50vh;
     position: fixed;
+    overflow: hidden;
     background-color: var(--red);
     left: 50%;
     top: 50%;
@@ -57,7 +69,7 @@ html{
     transform-origin: 0% 0%;
 }
 
-#cookie div{
+#cookie #bigDot{
     height: 10vh;
     width: 10vh;
     border-radius: 50vh;
@@ -65,10 +77,10 @@ html{
     background-color: var(--lightblue);
     left: 10vh;
     top: 10vh;
-    animation:color 4s linear infinite alternate;
+    animation:color 4s ease-in-out infinite alternate;
 }
 
-#cookie :nth-child(2){
+#cookie #smallDot{
     height: 5vh;
     width: 5vh;
     border-radius: 50vh;
@@ -76,15 +88,58 @@ html{
     background-color: var(--lightblue);
     left: 32.5vh;
     top: 32.5vh;
-    animation-delay: -4s;
+    animation: color 4s ease-in-out -4s infinite alternate;
+}
+
+.pulsing {
+    animation: breathe 0.5s ease-in-out infinite alternate;
+}
+
+#rippleBound{
+    height: 50%;
+    width: 50vh;
+    border-radius: 50vh;
+    position: fixed;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform-origin: 0% 0%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+#ripple{
+    position: fixed;
+    background-color: #1d3557;
+    border-radius: 50vh;
+    height: 0%;
+    width: 0%;
+    left: 50%;
+    top: 50%;
+    transform-origin: 0% 0%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    animation:rippleDrop 0.5s ease-in;
 }
 
 #cookie h2 {
     position: fixed;
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1.5em;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    -ms-transform: translate(50%, -100%);
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+
+.slideOut{
+    animation:animateclose 0.5s ease-in-out;
 }
 
 @keyframes spin { 
@@ -108,4 +163,32 @@ html{
       top: -50%;
       opacity: 0;
     }
-  }
+}
+
+@keyframes rippleDrop {
+    0%{
+        width: 0%;
+        height: 0%;
+        opacity: 0.5;
+    }
+
+    100% {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+}
+
+@keyframes breathe {
+    0%{
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
