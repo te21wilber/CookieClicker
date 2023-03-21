@@ -1,3 +1,8 @@
+@font-face {
+    font-family: segment;
+    src: url(/fonts/segment.ttf);
+  }
+
 :root{
     --red: #e63946;
     --white: #f1faee;
@@ -136,6 +141,38 @@ h1{
     text-align: center;
     transform: translateY(-50%);
     -ms-transform: translateY(-50%);
+}
+
+#cookieCounter{
+    background-color: var(--black);
+    border-top: var(--lightblue);
+    color: var(--white);
+    width: 50%;
+    position: fixed;
+    left: 50%;
+    bottom: 10%;
+    max-width: 300px;
+    border-radius: 3vh;
+    border: solid 10px var(--darkblue);
+    height: fit-content;
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+#cookieCount{
+    font-size: 4em;
+    width: 100%;
+    text-align: center;
+    font-family: segment;
+}
+
+#cookieCounterText{
+    margin: 10px;
+    position: fixed;
+    font-size: 1em;
+    width: 10%;
+    text-align: left;
+    font-family: segment;
 }
 
 .slideOut{
