@@ -28,7 +28,22 @@
         <div id="smallDot"></div>
         <h2 unselectable="on">*I am a cookie</h2>
     </div>
-    <div id="cookieCounter">
+    <div id="menu">
+        <button id="reset" onclick="reset()">
+            <p>Reset</p>
+        </button>
+        <button id="timerBonus" onclick="timerBonus()">
+            <p>Timer bonus</p>
+            <p>Free cookies every sec</p>
+        </button>
+        <button id="capacityBonus" onclick="capacityBonus()"">
+            <p>Capacity bonus</p>
+            <p>+1</p>
+        </button>
+    </div>
+    <div id="cookieMenu">
+        <p id="cookieCapacityText">Cookie Capacity</p>
+        <p id="cookieCapacity">1</p>
         <p id="cookieCounterText">Cookie No.</p>
         <p id="cookieCount">0</p>
     </div>
