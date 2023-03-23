@@ -2,9 +2,11 @@ var dialogOpen = true;
 var cookieCount = 0;
 var cookieIncrease = 1;
 var timerCookieBonus = null;
+var capacityCost = 10;
 
 window.onload = function () {    
-    
+    var capacityBonusCost = document.getElementById("capacityBonusCost");
+    capacityBonusCost.innerText = '(-' + capacityCost+ ' cookies)';
 }
 
 function dissmissStartPopup(){
@@ -37,8 +39,17 @@ function reset(){
 
 function capacityBonus(){
     var cookieCapacity = document.getElementById("cookieCapacity");
-    cookieIncrease++;
-    cookieCapacity.innerText = cookieIncrease;
+    var cookieCounter = document.getElementById("cookieCount");
+    var capacityBonusCost = document.getElementById("capacityBonusCost");
+    if (cookieCount >= capacityCost){
+        cookieIncrease++;
+        cookieCount -= capacityCost;
+        cookieCapacity.innerText = cookieIncrease;
+        cookieCounter.innerText = cookieCount;
+        capacityCost *= 1.5;
+        capacityCost = Math.round(capacityCost);
+        capacityBonusCost.innerText = '(-' + capacityCost+ ' cookies)';
+    }
 }
 
 function timerBonus(){
